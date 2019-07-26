@@ -36,3 +36,5 @@ var typed = new Typed('#typed', {
   typeSpeed: 60,
   loop:true
 });
+
+AOS.init();
