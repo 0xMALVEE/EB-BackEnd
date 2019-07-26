@@ -1,5 +1,4 @@
 const express = require("express");
-var nodeMailer = require('nodemailer');
 const sgMail = require('@sendgrid/mail');
 var bodyParser = require('body-parser');
 const app = express();
@@ -15,20 +14,20 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.set("view engine","ejs");
 
+//Routes
 app.get("/",(req,res)=>{
   res.render("index");
 })
 
-//Routes
+
 app.post("/contact",(req,res)=>{
   const {name,email,message,subject} = req.body;
-  console.log(name,email,message,subject);
   
   const apiKey = "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";
 
   sgMail.setApiKey(apiKey);
   const msg = {
-    to: 'M.Alvee8101@gmail.com',
+    to: 'support@electronicbrain.net',
     from: email,
     subject: subject,
     text: message,
@@ -49,3 +48,5 @@ app.post("/contact",(req,res)=>{
 //Server Listening
 const PORT = process.env.PORT || 3000;
 app.listen(PORT);
+
+

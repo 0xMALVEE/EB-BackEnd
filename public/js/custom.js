@@ -31,4 +31,8 @@
 })(jQuery);
 
 
-
+var typed = new Typed('#typed', {
+  strings: ['Welcome To Electronic Brain',"We build: Websites [Wordpress-Code]","We build: Games with Unity","We build: Desktop Software", "AND MORE  ....."],
+  typeSpeed: 60,
+  loop:true
+});
